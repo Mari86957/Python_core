@@ -1,12 +1,12 @@
 from datetime import datetime
 
-def get_days_from_today():
-    date = input("Введіть дату в форматі YYY-MM-DD: ")
-    user_date = datetime.strptime(date,  '%Y-%m-%d').date()
-    # print(user_date)
-
+def  get_days_from_today(date):
+    date = datetime.strptime(date,  '%Y-%m-%d').date()
     today_date = datetime.today().date()
-    # print(today_date)
+    delta_days = today_date - date
+    return delta_days.days
 
-    delta_days = today_date - user_date
-    return(delta_days)
+print(get_days_from_today('2024-07-10'))  
+print(get_days_from_today('2024-07-25'))  
+print(get_days_from_today('2023-12-31'))
+
